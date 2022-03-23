@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.div-wrapper{
+    background: linear-gradient(to right, rgb(238, 119, 139), rgb(255, 97, 221));
+    padding: 20px 100px 20px;
+    border-radius: 50px;
+    margin: 10px auto; 
+    width: 960px;
+}
+
+.div-wrapper > p{
+    display: inline-block;
+    padding: 10px 50px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 3rem;
+    height: 50px;
+    background: linear-gradient(180deg, #787878 0%, #b5b5b5 25%, #fffdfd 50%, #b5b5b5 75%, #787878 100%);
+    
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0,0,0,.2); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.div-screen{
+    display: grid;
+    width: 960px;
+    height: 960px;
+    background: linear-gradient(90deg, rgba(181,185,182,1) 0%, rgba(213,223,217,1) 43%, rgba(165,171,167,1) 100%);
+}
+
+.square{
+    outline: solid 1px black;
+    outline-offset: -1px;
+    display:inline;
+}
+.sec-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.btn-clear{
+    width: 200px;
+    height: 50px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+
+.fig-knob{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    padding: 20px;
+    border: solid 1px fuchsia;
+}
