@@ -1,6 +1,7 @@
 # etch-a-sketch
 ## The Odin Project // Etch A Sketch app
 ---
+![etch-a-sketch image](Etch-A-Sketch .png)
 
 **Goals:** 
 Create Etch-A-Sketch app which takes user input to determine size of the screen. 
