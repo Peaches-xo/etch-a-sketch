@@ -12,7 +12,7 @@ function getSize(){
     }
 };
 
-window.onload = getSize();
+getSize();
 
 function createGrid(size){
     let sizeOfSquare = (size) => 960 / size; //determines size of each child div & puts value in sizeOfSquare
