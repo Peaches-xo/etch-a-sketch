@@ -12,8 +12,6 @@ function getSize(){
     }
 };
 
-getSize();
-
 function createGrid(size){
     let sizeOfSquare = (size) => 960 / size; //determines size of each child div & puts value in sizeOfSquare
 
@@ -27,16 +25,22 @@ function createGrid(size){
     }
 }
 
-screenDiv.addEventListener('mouseover', function(e){
-    e.target.style.background = "rgba(0,0,0,0.8)";
-});
+// screenDiv.addEventListener('mouseover', function(e){
+//     e.target.style.background = "rgba(0,0,0,0.8)";
+// });
 
 const btnClear = document.querySelector(".btn-clear"); 
 const secControls = document.querySelector(".sec-controls"); //select section with  buttons
 
 secControls.addEventListener('click', function(e){ //add event listener to section
 
-    if (e.target.textContent == "RGB"){ // if clicked on RGB 
+    if (e.target.textContent == "Create New Grid"){ 
+        getSize();
+        screenDiv.addEventListener('mouseover', function(e){
+            e.target.style.background = "rgba(0,0,0,0.8)";
+            });
+        btnClear.textContent = "Clear";
+    } else if (e.target.textContent == "RGB"){ // if clicked on RGB 
         screenDiv.addEventListener('mouseover', function(e){
             let r = Math.floor(Math.random() * (255 - 0 + 1));
             let g = Math.floor(Math.random() * (255 - 0 + 1));
@@ -53,6 +57,7 @@ secControls.addEventListener('click', function(e){ //add event listener to secti
             screenDiv.removeChild(sqDivs[i]);
         }
         btnClear.textContent = "Create New Grid";
+      
     } else {
     btnClear.textContent = "Clear"
     getSize();
