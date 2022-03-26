@@ -11,6 +11,7 @@ Create Etch-A-Sketch app which takes user input to determine size of the screen.
     - Use CSS Grid to lay out
     - Add event listeners to change colour of pen
     - Create & modify README with markdown
+    - Add responsiveness for mobile
 
 ---
 **Positives:**
