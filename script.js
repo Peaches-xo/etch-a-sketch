@@ -23,47 +23,56 @@ function createGrid(size){
         newDiv.style.width = sizeOfSquare(size);
         screenDiv.appendChild(newDiv);
     }
+    screenDiv.addEventListener('mouseover', function(e){
+        
+    e.target.style.background = "rgba(0,0,0,0.8)";
+    });
+
 }
 
-// screenDiv.addEventListener('mouseover', function(e){
-//     e.target.style.background = "rgba(0,0,0,0.8)";
-// });
 
 const btnClear = document.querySelector(".btn-clear"); 
 const secControls = document.querySelector(".sec-controls"); //select section with  buttons
+const leftKnob = document.querySelector("#knob-L");
+let leftText = document.querySelector("#text-L");
+const rightKnob = document.querySelector("#knob-R");
+let rightText = document.querySelector("#text-R");
 
-secControls.addEventListener('click', function(e){ //add event listener to section
-
-    if (e.target.textContent == "Create New Grid"){ 
+leftKnob.addEventListener('click', function(e){ //add event listener to knob
+    if (leftText.textContent == "New Grid"){ 
         getSize();
+        leftText.textContent = "Clear Grid";
+        
+    } else if (leftText.textContent == "Clear Grid"){  // if clicked on Clear
+        const sqDivs = document.querySelectorAll(".square");
+        for (let i=0; i<sqDivs.length;i++){
+            screenDiv.removeChild(sqDivs[i]);
+
+            screenDiv.addEventListener('mouseover', function(e){
+                e.target.style.background = "var(--screen)";
+            }); 
+            leftText.textContent = "New Grid";
+            rightText.textContent = "RGB";
+    
+        }
+    } 
+});
+
+
+
+rightKnob.addEventListener('click', function(e){
+    if (rightText.textContent == "Black"){
         screenDiv.addEventListener('mouseover', function(e){
             e.target.style.background = "rgba(0,0,0,0.8)";
-            });
-        btnClear.textContent = "Clear";
-    } else if (e.target.textContent == "RGB"){ // if clicked on RGB 
+        });
+        rightText.textContent = "RGB";
+    } else if (rightText.textContent == "RGB"){
         screenDiv.addEventListener('mouseover', function(e){
             let r = Math.floor(Math.random() * (255 - 0 + 1));
             let g = Math.floor(Math.random() * (255 - 0 + 1));
             let b = Math.floor(Math.random() * (255 - 0 + 1));
             e.target.style.background = `rgba(${r},${g},${b},0.8)`;
         });
-    } else if (e.target.textContent == "Black"){ // if clicked on Black 
-        screenDiv.addEventListener('mouseover', function(e){
-            e.target.style.background = "rgba(0,0,0,0.8)";
-        });
-    } else if (e.target.textContent == "Clear"){  // if clicked on Clear
-        const sqDivs = document.querySelectorAll(".square");
-        for (let i=0; i<sqDivs.length;i++){
-            screenDiv.removeChild(sqDivs[i]);
-        }
-        btnClear.textContent = "Create New Grid";
-      
-    } else {
-    btnClear.textContent = "Clear"
-    getSize();
+        rightText.textContent = "Black";
     }
 });
-
-
-
-
