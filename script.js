@@ -24,8 +24,8 @@ function createGrid(size){
         screenDiv.appendChild(newDiv);
     }
     screenDiv.addEventListener('mouseover', function(e){
-        
     e.target.style.background = "rgba(0,0,0,0.8)";
+  
     });
 
 }
@@ -42,6 +42,7 @@ leftKnob.addEventListener('click', function(e){ //add event listener to knob
     if (leftText.textContent == "New Grid"){ 
         getSize();
         leftText.textContent = "Clear Grid";
+        rightText.textContent = "RGB";  
         
     } else if (leftText.textContent == "Clear Grid"){  // if clicked on Clear
         const sqDivs = document.querySelectorAll(".square");
